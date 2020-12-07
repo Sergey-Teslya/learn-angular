@@ -1,0 +1,19 @@
+
+<div>
+  <input #city type="text" placeholder="City" required="required">
+  <input #title type="text" placeholder="Title" required="required">
+  <input #price type="number" placeholder="Price" required="required">
+  <button class="ml-1" (click)="addEventCard(city.value, title.value, +price.value)">Add Event Card</button>
+
+  <div style="padding-top: 20px">
+    <button (click)="saveInLocalStorage()" >Add list to the local storage</button>
+    <button class="ml-1" (click)="updateEventCardsByLocalStorage()" >Update event cards by local storage</button>
+  </div>
+</div>
+
+<div>
+  <div *ngFor="let eventCard of eventCards; let i = index">
+    <p> {{i+1}}. {{eventCard.toString()}}</p>
+    <button (click)="removeEventCard(i)">Remove</button>
+  </div>
+</div>
