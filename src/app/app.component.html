@@ -23,3 +23,9 @@
 <!--который будет в зависимости от переданного значения увеличивать или уменьшать счетчик.-->
 <h2>Количество кликов: {{click}}</h2>
 <app-output-child (customEventChange)="updateClick($event)"></app-output-child>
+
+<!-- TODO получение данных родительского компонента и изминение их, через аннотацию @ViewChild-->
+<!-- С помощью аннотации ViewChild также можно связать свойство и переменную из шаблона-->
+<app-vie-child></app-vie-child>
+<button (click)="increment()">+</button>
+<button (click)="decrement()">-</button>
